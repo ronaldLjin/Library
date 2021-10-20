@@ -1,3 +1,66 @@
 #booktable {
     width: 500px;
 }
+
+#bookInfo {
+    background: white;
+    width: 400px;
+    z-index: 9;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    padding: 30px;
+    margin: 0;
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#addbook {
+    width: 100px;
+    height: 35px;
+    outline-style: initial;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    z-index: 9;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.completed {
+    border-style: none;
+    background-color: #87DE87;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 90px;
+}
+
+.inprogress {
+    border-style: none;
+    background-color: #fcd703;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 90px;
+}
+
+#mask {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 8;
+    display: none;
+}
