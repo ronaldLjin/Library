@@ -64,3 +64,52 @@ body {
     z-index: 8;
     display: none;
 }
+
+.editmode {
+    border-style: none;
+    background-color: #196885;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, +130px);
+}
+
+th {
+    background-color: #e6e6e6;
+    text-align: left;
+    padding: 5px;
+}
+
+td {
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    padding: 7px;
+    border-color: #e6e6e6;
+}
+
+#header {
+    background-color: rgb(37, 150, 190);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+}
+
+#headertext {
+    margin: 10px;
+}
+
+.normal {
+    border-style: none;
+    background-color: rgb(37, 150, 190);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
