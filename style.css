@@ -8,7 +8,7 @@
     z-index: 9;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     padding: 30px;
-    margin: 0;
+    margin: 0 0 20px 0;
     position: fixed;
     display: none;
     top: 50%;
@@ -31,7 +31,22 @@ body {
     right: 0;
     margin: 20px;
     z-index: 9;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px 0px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+#addbook:hover,
+#submit:hover {
+    background-color: #3f3f3f;
+    transition: background-color 0.2s;
+}
+
+#addbook:active,
+#submit:active {
+    background-color: #6f6f6f;
 }
 
 .completed {
@@ -52,6 +67,16 @@ body {
     cursor: pointer;
     border-radius: 5px;
     width: 90px;
+}
+
+.completed:hover {
+    background-color: #a4e6a4;
+    transition: background-color 0.2s;
+}
+
+.inprogress:hover {
+    background-color: #fce141;
+    transition: background-color 0.2s;
 }
 
 #mask {
@@ -112,4 +137,77 @@ td {
     color: white;
     cursor: pointer;
     border-radius: 5px;
+}
+
+#close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-style: none;
+    background-color: transparent;
+    font-size: 17pt;
+    line-height: 17pt;
+    color: #acacac;
+}
+
+.fa-trash-alt {
+    color: #e6e6e6;
+}
+
+.fa-trash-alt:hover {
+    color: #acacac;
+    transition: color 0.2s;
+}
+
+#title,
+#author,
+#pages {
+    margin: 5px 0 10px 0;
+    padding: 3px;
+    width: 75%;
+    border-style: solid;
+    border-color: #acacac;
+    background-color: #e6e6e6;
+    border-width: 0 0 1px 0;
+}
+
+#title:hover,
+#author:hover,
+#pages:hover {
+    background-color: #cfcfcf;
+}
+
+#status {
+    margin: 5px 0 10px 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+#submit {
+    cursor: pointer;
+    padding: 10px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+@media (max-width: 500px) {
+    #booktable {
+        width: 90%;
+        font-size: 10pt;
+    }
+    .completed,
+    .inprogress {
+        font-size: 10pt;
+    }
+    #bookInfo {
+        width: 75%;
+    }
+}
+
+tr:hover {
+    background-color: #f0f8fc;
 }

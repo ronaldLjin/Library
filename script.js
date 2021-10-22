@@ -5,6 +5,7 @@ function Book(title, author, pages, read) {
     this.author = author
     this.pages = pages
     this.read = read
+
 }
 
 let bookTable = document.getElementById('booktable')
@@ -29,20 +30,17 @@ displayBook = (book) => {
         statusButton.textContent = "In-progress";
         statusButton.classList.add('inprogress')
     }
-    bookTable.appendChild(garbage);
+    newRow.appendChild(garbage);
     garbage.appendChild(garbageIcon);
+    garbageIcon.classList.add('fas', 'fa-trash-alt');
     statusCell.appendChild(statusButton)
-    bookTable.appendChild(titleCell);
-    bookTable.appendChild(authorCell);
-    bookTable.appendChild(pagesCell);
-    bookTable.appendChild(statusCell);
+    newRow.appendChild(titleCell);
+    newRow.appendChild(authorCell);
+    newRow.appendChild(pagesCell);
+    newRow.appendChild(statusCell);
+    bookTable.appendChild(newRow);
     garbage.addEventListener('click', () => {
         bookTable.removeChild(newRow);
-        bookTable.removeChild(garbage);
-        bookTable.removeChild(titleCell);
-        bookTable.removeChild(authorCell);
-        bookTable.removeChild(pagesCell);
-        bookTable.removeChild(statusCell);
         myLibrary = myLibrary.filter(function(item) {
             return item !== book
         })
@@ -58,21 +56,6 @@ displayBook = (book) => {
             statusButton.classList.remove('inprogress');
             statusButton.classList.add('completed');
             book.read = true;
-        }
-    })
-    let edit = document.getElementById('edit')
-    let editMode = false;
-    edit.addEventListener('click', () => {
-        if (editMode == false) {
-            garbageIcon.classList.add('fas', 'fa-trash-alt');
-            editMode = true;
-            edit.classList.toggle('normal');
-            edit.classList.add('editmode');
-        } else {
-            editMode = false;
-            garbageIcon.classList.remove('fas', 'fa-trash-alt');
-            edit.classList.toggle('normal');
-            edit.classList.remove('editmode');
         }
     })
 }
@@ -109,6 +92,11 @@ bookInfo.style.display = "none";
 let mask = document.getElementById('mask')
 mask.style.display = "none";
 
+let close = document.getElementById("close", () => {
+    bookInfo.style.display = "none"
+    mask.style.display = "none";
+})
+
 let formButton = document.getElementById('addbook');
 formButton.addEventListener('click', () => {
     if (bookInfo.style.display === "none") {
@@ -123,5 +111,3 @@ mask.addEventListener('click', () => {
     bookInfo.style.display = "none"
     mask.style.display = "none";
 })
-
-// make it so that when u delete it removes from array//
