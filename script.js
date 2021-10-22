@@ -44,6 +44,7 @@ displayBook = (book) => {
         myLibrary = myLibrary.filter(function(item) {
             return item !== book
         })
+        load()
     })
     statusButton.addEventListener('click', () => {
         if (book.read == true) {
@@ -57,6 +58,7 @@ displayBook = (book) => {
             statusButton.classList.add('completed');
             book.read = true;
         }
+        load()
     })
 }
 
@@ -74,6 +76,7 @@ newBook = (e) => {
         bookInfo.style.display = "none";
         mask.style.display = "none";
     }
+    load()
     e.preventDefault();
 }
 
@@ -111,3 +114,20 @@ mask.addEventListener('click', () => {
     bookInfo.style.display = "none"
     mask.style.display = "none";
 })
+
+function load(e) {
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
+}
+
+window.onload = function() {
+    if (localStorage.getItem("myLibrary") !== null && localStorage.getItem("myLibrary") !== "[]") {
+        myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
+        if (myLibrary.length > 1) {
+            for (let i = 0; i < myLibrary.length; i++) {
+                displayBook(myLibrary[i]);
+            }
+        } else if (myLibrary.length == 1) {
+            displayBook(myLibrary[0])
+        }
+    }
+}
