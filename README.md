@@ -1,5 +1,5 @@
-# library
+# Library
 
-Preview: [click here](https://ronaldljin.github.io/library/)
+Preview: [click here](https://ronaldljin.github.io/Library/)
 
 All data is saved locally.
